@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hassnain – Junior Clerk Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand">Hassnain</span>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>f
+    </nav>
+  </header>
+
+    <section class="hero" id="top">
+      <div class="hero-row">
+        <img class="profile-pic" src="./images/websitepic.jpeg" alt="Hassnain">
+        <div>
+          <h1>Hassnain</h1>
+          <p class="role"></p>
+        </div>
+      </div>
+      <p class="lead"></p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Contact me</a>
+        <button class="btn" id="printBtn" type="button">Print / Save CV as PDF</button>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p></p>
+      <dl class="facts">
+        <dt>Education</dt><dd></dd>
+        <dt>Location</dt><dd></dd>
+      </dl>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Poulta (private poultry company)</h3>
+          <span class="dates">2026 – Present</span>
+        </div>
+        <ul>
+          <li>Monitor assigned farms every day.</li>
+          <li>Prepare and submit the daily report for each farm.</li>
+          <li>Coordinate with the FM on farm needs.</li>
+          <li>Diagnose issues and work on solving them.</li>
+          <li>Share a weekly report with my manager.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Computer knowledge</li>
+        <li>Fast typing</li>
+        <li>Document making</li>
+        <li>File saving and record keeping</li>
+        <li>Daily and weekly reporting</li>
+        <li>Coordination with team</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:poultahassnain@gmail.com" id="emailLink">poultahassnain@gmail.com</a>
+        <button class="btn small" id="copyBtn" type="button">Copy email</button></p>
+
+      <form id="contactForm" novalidate>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>

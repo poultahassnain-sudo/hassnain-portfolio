@@ -1,0 +1,109 @@
+:root {
+  --paper: #f2f5ee;
+  --ink: #1c2840;
+  --rule: #c3d3c0;
+  --margin: #c0392b;
+  --muted: #55607a;
+  --line: 2rem; /* one ledger row */
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #16202e; --ink: #e8ecf4; --rule: #2c3d52; --margin: #e5705f; --muted: #9aa6bd; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 100;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1rem/var(--line) "IBM Plex Sans", system-ui, sans-serif;
+}
+.top {
+  padding: .75rem max(1rem, calc((100% - 62rem) / 2));
+}
+.brand { font: 700 1.25rem "Newsreader", Georgia, serif; }
+nav a { margin-left: 1rem; color: var(--ink); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--margin); outline-offset: 2px;
+}
+
+/* the ledger page: ruled lines + red margin line */
+.ledger {
+ .ledger {
+  width: min(100% - 2rem, 62rem);   /* screen ke hisaab se chaura, dono taraf 1rem jagah */
+  margin: 2rem auto;                /* bilkul darmiyan mein */
+  padding: 0 2rem 2rem 4rem;        /* upar, right, neeche, left */
+  background:
+    linear-gradient(90deg, transparent 2.5rem, var(--margin) 2.5rem, var(--margin) calc(2.5rem + 2px), transparent calc(2.5rem + 2px)),
+    repeating-linear-gradient(transparent 0, transparent calc(var(--line) - 1px), var(--rule) calc(var(--line) - 1px), var(--rule) var(--line));
+}
+}
+section { padding: var(--line) 0 0; }
+h1, h2, h3 { font-family: "Newsreader", Georgia, serif; margin: 0; line-height: var(--line); }
+h1 { font-size: 3.5rem; line-height: calc(var(--line) * 2); }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0; max-width: 60ch; }
+.role { font-weight: 500; color: var(--margin); }
+.lead { font-size: 1.15rem; margin-top: var(--line); }
+.actions { margin-top: var(--line); display: flex; gap: .75rem; flex-wrap: wrap; }
+
+.btn {
+  font: 500 .95rem "IBM Plex Sans", sans-serif; padding: 0 1rem; height: var(--line); line-height: calc(var(--line) - 4px);
+  border: 2px solid var(--ink); background: var(--paper); color: var(--ink); text-decoration: none; cursor: pointer; border-radius: 4px;
+}
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn.small { height: 1.6rem; line-height: calc(1.6rem - 4px); font-size: .85rem; margin-left: .5rem; }
+.btn:hover { transform: translateY(-1px); }
+
+.facts { display: grid; grid-template-columns: 7rem 1fr; margin: 0; }
+.facts dt { font-weight: 500; color: var(--muted); }
+.facts dd { margin: 0; }
+
+.entry-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0 1rem; }
+.dates { color: var(--muted); }
+ul { margin: 0; padding-left: 1.2rem; }
+.skills { list-style: none; padding: 0; columns: 2; }
+.skills li::before { content: "✓ "; color: var(--margin); }
+
+form { display: grid; max-width: 30rem; }
+label { font-weight: 500; }
+input, textarea {
+  font: inherit; line-height: 1.5; padding: .25rem .5rem; margin-bottom: var(--line);
+  border: 2px solid var(--ink); border-radius: 4px; background: var(--paper); color: var(--ink);
+}
+.status { min-height: var(--line); color: var(--margin); }
+form .btn { justify-self: start; }
+
+footer { text-align: center; padding: 1.5rem; color: var(--muted); border-top: 2px solid var(--ink); }
+
+@media (max-width: 520px) {
+  h1 { font-size: 2.6rem; }
+  .skills { columns: 1; }
+  .facts { grid-template-columns: 1fr; }
+  .ledger { padding-left: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+@media print {
+  .top, .actions, #contactForm, #copyBtn, footer { display: none; }
+  .ledger { margin: 0; }
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+}
+
+@media (max-width: 520px) {
+  .profile-pic { width: 6rem; height: 6rem; }
+}
